@@ -1,1 +1,10 @@
-Hiiii
+1. git remote add origin <URL>
+2. git clone <URL>
+3. git status
+4. git add src/main/java/com/package/Controller.java src/main/java/com/package/Controller2.java src/main/java/com/package/Controller3.java
+5. git commit -m "Meaningful message"
+6. git push origin
+7. git commit -a -m "Meaninhful message"
+8. git pull
+9. git config --global user.name "Eresh"
+10. git config -g user.email "email@mail.com"

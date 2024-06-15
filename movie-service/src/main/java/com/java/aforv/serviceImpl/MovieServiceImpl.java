@@ -1,5 +1,7 @@
 package com.java.aforv.serviceImpl;
 
+import com.java.aforv.exception.InvalidDataException;
+import com.java.aforv.exception.NotFoundException;
 import com.java.aforv.model.Movie;
 import com.java.aforv.repo.MovieRepository;
 import com.java.aforv.service.MovieService;
@@ -24,7 +26,7 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public Movie read(Long id) {
 
-        return movieRepository.findById(id).orElseThrow(() -> new RuntimeException(" movie not found"));
+        return movieRepository.findById(id).orElseThrow(() -> new NotFoundException(" movie not found with id:"+id));
     }
 
     @Override
@@ -35,9 +37,7 @@ public class MovieServiceImpl implements MovieService {
         existingMovie.setActors(movie.getActors());
         return movieRepository.save(existingMovie);
     }
-
-
-        @Override
+    @Override
     public void delete(Long id) {
          movieRepository.deleteById(id);
 
